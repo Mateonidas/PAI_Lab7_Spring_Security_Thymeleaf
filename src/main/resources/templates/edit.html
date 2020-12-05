@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="layout :: head">
+
+</head>
+
+<body>
+
+<div th:include="layout :: navigationPanel"></div>
+
+<div class="container">
+    <h3>User edit</h3>
+    <hr>
+
+    <form action="#" th:action="@{/edit}" th:object="${currentUser}" method="POST">
+
+        <input type="hidden" th:field="*{userid}"/>
+
+        <input type="text" th:field="*{name}" placeholder="Name">
+        <p class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+        <hr>
+
+        <input type="text" th:field="*{surname}" placeholder="Surname">
+        <p class="error" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></p>
+        <hr>
+
+        <input type="text" th:field="*{login}" placeholder="Login">
+        <p class="error" th:if="${#fields.hasErrors('login')}" th:errors="*{login}"></p>
+        <hr>
+
+        <input type="password" th:field="*{password}" placeholder="Password">
+        <p class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+        <hr>
+
+        <button type="submit" >Save</button>
+    </form>
+
+    <hr>
+</div>
+
+</body>
+
+</html>
