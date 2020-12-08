@@ -76,11 +76,10 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             return "edit";
         }
-
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         dao.save(user);
 
-        return "redirect:profile";
+        return "redirect:/profile";
     }
 
     @GetMapping("/delete")

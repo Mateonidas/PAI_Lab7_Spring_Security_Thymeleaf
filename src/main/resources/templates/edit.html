@@ -17,16 +17,14 @@
 
         <input type="hidden" th:field="*{userid}"/>
 
+        <input type="hidden" th:field="*{login}">
+
         <input type="text" th:field="*{name}" placeholder="Name">
         <p class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
         <hr>
 
         <input type="text" th:field="*{surname}" placeholder="Surname">
         <p class="error" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></p>
-        <hr>
-
-        <input type="text" th:field="*{login}" placeholder="Login">
-        <p class="error" th:if="${#fields.hasErrors('login')}" th:errors="*{login}"></p>
         <hr>
 
         <input type="password" th:field="*{password}" placeholder="Password">
